@@ -16,3 +16,15 @@ const kTextFieldDecoration = InputDecoration(
     borderRadius: BorderRadius.all(Radius.circular(32.0)),
   ),
 );
+
+const colorizeColors = [
+  Colors.purple,
+  Colors.blue,
+  Colors.yellow,
+  Colors.red,
+];
+
+const colorizeTextStyle = TextStyle(
+  fontSize: 50.0,
+  fontFamily: 'Horizon',
+);
