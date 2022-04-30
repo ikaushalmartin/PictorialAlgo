@@ -37,6 +37,7 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+
     control = AnimationController(vsync: this, duration: Duration(seconds: 1));
     control.forward();
     control.addListener(() {
@@ -66,11 +67,13 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                  Hero(
-                    tag: 'logo',
-                    child: Container(
-                      height: (animationvalue.value) * 68,
-                      child: Image.asset('images/logo.png'),
+                  Flexible(
+                    child: Hero(
+                      tag: 'logo',
+                      child: Container(
+                        height: (animationvalue.value) * 68,
+                        child: Image.asset('images/logo.png'),
+                      ),
                     ),
                   ),
                   Text(
@@ -127,6 +130,9 @@ class _MyAppState extends State<MyApp> with TickerProviderStateMixin {
                             context,
                             'chatscreen',
                           );
+                          setState(() {
+                            showSpinner = false;
+                          });
                         }
                       } catch (e) {
                         print(e);

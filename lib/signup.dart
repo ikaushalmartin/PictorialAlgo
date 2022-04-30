@@ -27,10 +27,12 @@ class _signupscreenState extends State<signupscreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Hero(
-                  tag: 'logo',
-                  child: Container(
-                      height: 160, child: Image.asset('images/logo.png'))),
+              Flexible(
+                child: Hero(
+                    tag: 'logo',
+                    child: Container(
+                        height: 160, child: Image.asset('images/logo.png'))),
+              ),
               SizedBox(height: 10),
               Text(
                 "SignUp",
